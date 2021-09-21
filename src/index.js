@@ -7,7 +7,8 @@ import { Provider } from 'react-redux';
 import App from './App';
 import taskReducer from './reducers/taskReducer';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
+const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+
 let store = createStore(taskReducer, composeEnhancers(applyMiddleware(thunk)))
 
 

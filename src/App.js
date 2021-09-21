@@ -1,9 +1,14 @@
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchTasks } from './actions/fetchTasks';
 import './App.css';
 
-export default class App extends Component  {
+class App extends Component  {
 
+ componentDidMount() {
+   this.props.fetchTasks()
+ }
 
   render() {
     return (
@@ -13,3 +18,5 @@ export default class App extends Component  {
     )
   }
 }
+
+export default connect(null, {fetchTasks} )(App);
