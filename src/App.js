@@ -1,19 +1,16 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import TasksContainer from './containers/TasksContainer';
 import { fetchTasks } from './actions/fetchTasks';
 import './App.css';
 
 class App extends Component  {
 
- componentDidMount() {
-   this.props.fetchTasks()
- }
-
   render() {
     return (
       <div className="App">
-        App
+        <TasksContainer />
       </div>
     )
   }
