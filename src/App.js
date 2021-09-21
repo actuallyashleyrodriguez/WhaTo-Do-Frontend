@@ -1,8 +1,6 @@
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import TasksContainer from './containers/TasksContainer';
-import { fetchTasks } from './actions/fetchTasks';
 import './App.css';
 
 class App extends Component  {
@@ -16,4 +14,4 @@ class App extends Component  {
   }
 }
 
-export default connect(null, {fetchTasks} )(App);
+export default App;

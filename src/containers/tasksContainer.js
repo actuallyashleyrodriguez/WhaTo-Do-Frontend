@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 
     componentDidMount() {
         this.props.fetchTasks()
+        
     }
     render() {
         return (
