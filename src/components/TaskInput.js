@@ -1,15 +1,43 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addAccount } from "../actions/addTask";
 
-export default class TaskInput extends Component {
+ class TaskInput extends Component {
     state = {
+        status: '',
+        category: '',
+        description: '',
+        date: ''
+    }
 
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value,
+          });
+    }
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.addAccount(this.state)
     }
 
     render() {
         return(
             <div>
-                TaskInput
+                <form onSubmit={this.handleSubmit}>
+                <input type="text" placeholder="eg: Home, School, Work" value ={this.state.category} name="category" onChange={this.handleChange}/>
+                <label>Enter the Task Category</label>
+                <br/><br/>
+                <input type="text" placeholder="eg: Priority, Open, Pending" value = {this.state.status} name="status" onChange={this.handleChange}/>
+                <label>Enter the Task Status</label><br/><br/>
+                <input type="text" placeholder="Description of Task" value = {this.state.description} name="description" onChange={this.handleChange}/>
+                <label>Enter the Task Description</label><br/><br/>
+                <input type="datetime-local" name="date" value={this.state.date} onChange={this.handleChange}/>
+                <label>Enter the Due Date for the task</label><br/><br/>
+                <input type="submit"></input>
+                </form>
             </div>
         )
     }
 }
+
+export default connect(null, {addAccount})(TaskInput)
