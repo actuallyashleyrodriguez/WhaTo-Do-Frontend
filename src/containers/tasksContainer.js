@@ -3,6 +3,7 @@ import Tasks from '../components/Tasks'
 import TaskInput from '../components/TaskInput'
 import { fetchTasks } from '../actions/fetchTasks';
 import { connect } from 'react-redux';
+import {Route} from 'react-router-dom'
 
  class TasksContainer extends Component {
 
@@ -13,7 +14,8 @@ import { connect } from 'react-redux';
     render() {
         return (
             <div>
-                <TaskInput/>
+                <Route path="/tasks/new" component={TaskInput}/>
+                
                 <Tasks tasks={this.props.tasks}/>
             </div>
         )

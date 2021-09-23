@@ -18,6 +18,12 @@ import { addAccount } from "../actions/addTask";
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addAccount(this.state)
+        this.setState({
+            status: '',
+            category: '',
+            description: '',
+            date: ''
+        })
     }
 
     render() {
