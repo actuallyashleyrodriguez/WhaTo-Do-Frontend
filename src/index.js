@@ -6,11 +6,11 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
-import taskReducer from './reducers/taskReducer';
+import rootReducers from './reducers/rootReducers';
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
-let store = createStore(taskReducer, composeEnhancers(applyMiddleware(thunk)))
+let store = createStore(rootReducers, composeEnhancers(applyMiddleware(thunk)))
 
 
 ReactDOM.render( 

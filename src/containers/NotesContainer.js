@@ -1,34 +1,38 @@
 import React, { Component } from 'react'
-import Tasks from '../components/Tasks'
-import TaskInput from '../components/TaskInput'
-import { fetchTasks } from '../actions/fetchTasks';
+import Notes from '../components/Notes'
+import NoteInput from '../components/NoteInput'
+import { fetchNotes } from '../actions/fetchNotes';
 import { connect } from 'react-redux';
 import {Route, Switch} from 'react-router-dom'
-import Task from '../components/Task';
+import Note from '../components/Note';
 
- class TasksContainer extends Component {
+ class NotesContainer extends Component {
 
-    componentDidMount() {
-        this.props.fetchTasks()
+ componentDidMount() {
+       this.props.fetchNotes()
         
-    }
+}
     render() {
         return (
             <div>
-                <Switch>
-                <Route path="/tasks/new" component={TaskInput}/>
-                <Route path='/tasks/:id' render= {(routerProps)=> <Task {...routerProps}tasks={this.props.tasks}/>} />
-                <Route exact path="/tasks" render={ (routerProps) =>  <Tasks {...routerProps} tasks={this.props.tasks}/>}/> 
-                </Switch>    
+             {/*<Switch>
+                <Route path="/notes/new" component={TaskInput}/>
+                <Route path='/notes/:id' render= {(routerProps)=> <Task {...routerProps}tasks={this.props.tasks}/>} />
+                <Route exact path="/notes" render={ (routerProps) =>  <Tasks {...routerProps} tasks={this.props.tasks}/>}/> 
+             </Switch>  */}  
+             {/*<NoteInput/>*/}
+             <Notes notes={this.props.notes} />
             </div>
         )
     }
 }
-
 const mapStateToProps = state => {
-    return {
-        tasks: state.tasks
+     return {
+        notes: state.noteReducer.notes
     }
+
 }
 
-export default connect(mapStateToProps, {fetchTasks})(TasksContainer)
+export default connect(mapStateToProps, {fetchNotes}) (NotesContainer)
+
+

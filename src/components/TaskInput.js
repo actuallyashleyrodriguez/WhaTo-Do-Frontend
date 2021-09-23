@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addAccount } from "../actions/addTask";
+import { addTask } from "../actions/addTask";
 
  class TaskInput extends Component {
     state = {
@@ -17,7 +17,7 @@ import { addAccount } from "../actions/addTask";
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addAccount(this.state)
+        this.props.addTask(this.state)
         this.setState({
             status: '',
             category: '',
@@ -37,6 +37,8 @@ import { addAccount } from "../actions/addTask";
                 <label>Enter the Task Status</label><br/><br/>
                 <input type="text" placeholder="Description of Task" value = {this.state.description} name="description" onChange={this.handleChange}/>
                 <label>Enter the Task Description</label><br/><br/>
+                {/*<input type="text" placeholder="Notes for Task" value = {this.state.notes} name="notes" onChange={this.handleChange}/>
+                <label>Enter any Notes for this Task</label><br/><br/>*/}
                 <input type="datetime-local" name="date" value={this.state.date} onChange={this.handleChange}/>
                 <label>Enter the Due Date for the task</label><br/><br/>
                 <input type="submit"></input>
@@ -46,4 +48,4 @@ import { addAccount } from "../actions/addTask";
     }
 }
 
-export default connect(null, {addAccount})(TaskInput)
+export default connect(null, {addTask})(TaskInput)

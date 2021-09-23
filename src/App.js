@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import TasksContainer from './containers/TasksContainer';
 import './App.css';
+import NotesContainer from './containers/NotesContainer';
 
 class App extends Component  {
 
@@ -9,6 +10,7 @@ class App extends Component  {
     return (
       <div className="App">
         <TasksContainer />
+        <NotesContainer />
       </div>
     )
   }
