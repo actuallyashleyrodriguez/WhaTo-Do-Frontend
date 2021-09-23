@@ -24,8 +24,8 @@ import { addNote } from "../actions/addNote";
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
+                <label>Enter a new note</label>
                 <input type="text" placeholder="Enter your note" value ={this.state.description} name="description" onChange={this.handleChange}/>
-                <label>Enter your notes</label>
                 <br/><br/>
                 <input type="submit"></input>
                 </form>

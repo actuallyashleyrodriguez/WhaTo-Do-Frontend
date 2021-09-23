@@ -7,7 +7,8 @@ import { addTask } from "../actions/addTask";
         status: '',
         category: '',
         description: '',
-        date: ''
+        date: '',
+        note: ''
     }
 
     handleChange = (event) => {
@@ -22,7 +23,8 @@ import { addTask } from "../actions/addTask";
             status: '',
             category: '',
             description: '',
-            date: ''
+            date: '',
+            note: ''
         })
     }
 
@@ -37,8 +39,8 @@ import { addTask } from "../actions/addTask";
                 <label>Enter the Task Status</label><br/><br/>
                 <input type="text" placeholder="Description of Task" value = {this.state.description} name="description" onChange={this.handleChange}/>
                 <label>Enter the Task Description</label><br/><br/>
-                {/*<input type="text" placeholder="Notes for Task" value = {this.state.notes} name="notes" onChange={this.handleChange}/>
-                <label>Enter any Notes for this Task</label><br/><br/>*/}
+                <input type="text" placeholder="Notes for Task" value = {this.state.notes} name="notes" onChange={this.handleChange}/>
+                <label>Enter any Notes for this Task</label><br/><br/>
                 <input type="datetime-local" name="date" value={this.state.date} onChange={this.handleChange}/>
                 <label>Enter the Due Date for the task</label><br/><br/>
                 <input type="submit"></input>

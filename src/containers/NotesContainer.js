@@ -14,21 +14,20 @@ import Note from '../components/Note';
 }
     render() {
         return (
-            <div>
-             {/*<Switch>
-                <Route path="/notes/new" component={TaskInput}/>
-                <Route path='/notes/:id' render= {(routerProps)=> <Task {...routerProps}tasks={this.props.tasks}/>} />
-                <Route exact path="/notes" render={ (routerProps) =>  <Tasks {...routerProps} tasks={this.props.tasks}/>}/> 
-             </Switch>  */}  
-             {/*<NoteInput/>*/}
-             <Notes notes={this.props.notes} />
+            <div> 
+             <Switch>
+             <Route path="/notes/new" component={NoteInput}/>
+             <Route path='/notes/:id' render= {(routerProps)=> <Note {...routerProps}  notes={this.props.notes} tasks={this.props.tasks}/>} />
+             <Route exact path="/notes" render={ (routerProps) =>  <Notes {...routerProps} notes={this.props.notes} tasks ={this.props.tasks}/>}/> 
+             </Switch>
             </div>
         )
     }
 }
 const mapStateToProps = state => {
      return {
-        notes: state.noteReducer.notes
+        notes: state.noteReducer.notes,
+        tasks: state.taskReducer.tasks
     }
 
 }
