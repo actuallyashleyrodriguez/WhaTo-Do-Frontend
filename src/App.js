@@ -13,9 +13,9 @@ class App extends Component  {
       <div className="App">
         <h1>WhaTo Do?</h1>
         <NavBar />
+        <Affirmatons />
         <TasksContainer />
         <NotesContainer />
-        <Affirmatons />
       </div>
     )
   }

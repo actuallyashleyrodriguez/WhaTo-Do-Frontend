@@ -6,6 +6,7 @@ const NavBar = (props) => {
 
   return (
     <div className="nav">
+      <Link to='/'> Home  </Link> |
       <Link to='/tasks'> All Tasks  </Link> | 
       <Link to='/tasks/new'> Add Task</Link> |
       <Link to='/notes'> All Notes  </Link>
