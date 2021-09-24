@@ -3,6 +3,7 @@ import Task from "./Task";
 import { Route, Link } from "react-router-dom";
 
 const Tasks = (props) => {
+    console.log(props)
     return (
         <div className="task-list">{props.tasks.map(task => 
                  <li key={task.id} className="task">

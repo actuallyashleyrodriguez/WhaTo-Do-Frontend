@@ -27,7 +27,7 @@ import Task from '../components/Task';
 
 const mapStateToProps = state => {
     return {
-        tasks: state.tasks
+        tasks: state.taskReducer.tasks
     }
 }
 
