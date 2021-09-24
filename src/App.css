@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #DCC7aa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.affirmations {
+  color: #f7882f;
+  font-family: 'Asap Condensed', sans-serif;
+  font-size: 54px;
+}
+
+.nav {
+  padding-top: -80px;
+  margin-top: -10px;
 }

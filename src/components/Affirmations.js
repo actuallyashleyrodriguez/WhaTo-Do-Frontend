@@ -3,7 +3,7 @@ import affirmationList from '../data/affirmationList'
 
 const Affirmations = () => {
     return (
-        <div> 
+        <div className="affirmations"> 
             {affirmationList[Math.floor(Math.random() * affirmationList.length)]}
         </div>
     )

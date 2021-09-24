@@ -5,9 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #dcc7aa;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+h1 {
+  color: #6b7A8f;
+  font-family: 'Stick No Bills', sans-serif;
+  text-align: center;
+  font-size: 83px;
+  padding-top: -300px;
+  margin-top: 0px;
+  border-top: -20px;
 }
