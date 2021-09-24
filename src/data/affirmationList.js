@@ -1,4 +1,4 @@
-const affirmations = [
+const affirmationList = [
     "You got this",
     "You'll figure it out",
     "You're a smart cookie",
@@ -52,3 +52,6 @@ const affirmations = [
     "Ideas are the beginning points of all fortunes.",
     "Trust yourself. You know more than you think you do."
   ];
+
+  export default affirmationList
+
